@@ -94,25 +94,30 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
     <Card className="py-1 print:py-0">
       <CardHeader className="print:space-y-1">
         <div className="flex items-center justify-between gap-x-2 text-base">
-          <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
-            <CompanyLink company={company} link={link} />
-            <BadgeList
-              className="hidden gap-x-1 sm:inline-flex"
-              badges={badges}
-            />
-          </h3>
+        
+        <h2 className="text-xs inline-flex items-center justify-center gap-x-1 font-semibold">
+          {title}
+        </h2>
+       
           <WorkPeriod start={start} end={end} />
         </div>
-
-        <h4 className="font-mono text-sm font-semibold leading-none print:text-[12px]">
-          {title}
-        </h4>
+        
       </CardHeader>
 
+       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
+          <CompanyLink company={company} link={link} />
+          {/* <BadgeList
+            className="hidden gap-x-1 sm:inline-flex"
+            badges={badges}
+          /> */}
+        </h3>
+
       <CardContent>
-        <div className="mt-2 text-xs text-foreground/80 print:mt-1 print:text-[10px] text-pretty">
+        
+        <div className="mt-1 text-xxs text-foreground/70 print:mt-1 text-pretty">
           {description}
         </div>
+
         <div className="mt-2">
           <BadgeList
             className="-mx-2 flex-wrap gap-1 sm:hidden"
